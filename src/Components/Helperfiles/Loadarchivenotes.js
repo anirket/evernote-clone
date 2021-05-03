@@ -30,7 +30,7 @@ const Loadarchivenotes = ({ changecurrentid, note, currentid, location }) => {
                         <h2 className="font-bold">{note.titlevalue}</h2>
                         <div className="h-28 pt-2 overflow-ellipsis overflow-hidden">{note.textareavalue}</div>
                         <div className="last edited font-extralight p-1 text-sm">
-                            Last edited {note.updatedAt}
+                        <FormatTime updatedAt={note.updatedAt}/>
                         </div>
                     </div>
                     <hr />
