@@ -17,7 +17,7 @@ const Login = () => {
                         <h3>Remember everything important.</h3>
                     </div>
                 </div>
-                <div className="loginsection flex justify-center mt-20 items-center md:mt-28">
+                <div className="loginsection flex justify-center mt-20 items-center md:mt-14">
                    <LoginLogout/>
                 </div>
             </div>

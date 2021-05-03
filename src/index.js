@@ -7,7 +7,8 @@ import { Auth0Provider } from "@auth0/auth0-react";
 ReactDOM.render(
     <Auth0Provider domain="aniketkulkarni.us.auth0.com"
         clientId="9yYWQaFFmOhGbBy9CDJ7fhKLCoIpIfoS"
-        redirectUri="https://evernoteclone.vercel.app/all-notes">
+        redirectUri="https://evernoteclone.vercel.app/all-notes"
+        >
         <App />
     </Auth0Provider>
     , document.getElementById("root")
