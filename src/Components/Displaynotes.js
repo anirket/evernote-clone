@@ -3,7 +3,7 @@ import "../index.css"
 import { Notescontextmain } from './Contexts/Notescontext';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
-import {     useLocation, useHistory } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import { BASE_URL, GET_ALL_NOTES, GET_TRASH_NOTES, CREATE_NOTE } from './Utils/apiendpoints'
 import { getRequest, postRequest } from './Utils/apirequests'
 import { useAuth0 } from '@auth0/auth0-react'
@@ -29,7 +29,7 @@ const Displaynotes = () => {
     const [loading, setloading] = useState(false);
 
     //detect trash notes or all notes
-    const [notetype,settypenote] = useState("All");
+    const [notetype, settypenote] = useState("All");
     useEffect(() => {
         notes.forEach((note) => {
             if (note._id === location.pathname.substring(6) || note._id === location.pathname.substring(7)) {
@@ -52,7 +52,7 @@ const Displaynotes = () => {
             getallnotes();
         }
 
-       
+
         async function getallnotes() {
             if (location.pathname === "/all-notes" || location.pathname.substring(0, 6) === "/note/") {
                 const notes = await getRequest(`${BASE_URL}${GET_ALL_NOTES}/${user.sub}`)
@@ -72,7 +72,7 @@ const Displaynotes = () => {
             }
         }
 
-    }, [location.pathname,setnotes,user.sub])
+    }, [location.pathname, setnotes, user.sub])
     //function to toggle sidebar
     function sidebarhandle() {
         if (!sidebartoggle) {
@@ -120,21 +120,21 @@ const Displaynotes = () => {
                 {fetchingnotes ?
 
                     (<div className="flex justify-center items-center h-screen text-2xl text-green-500">
-                        <h2>Fetching Notes...</h2>
+                        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-black"></div>
                     </div>
 
                     )
                     :
                     (notes.map((note) => (
-                        
-                            <Loadarchivenotes key={note._id}
-                                changecurrentid={changecurrentid}
-                                currentid={currentid}
-                                note={note}
-                                location={location.pathname}
-                                zeronotes={zeronotes}
-                            />
-                        
+
+                        <Loadarchivenotes key={note._id}
+                            changecurrentid={changecurrentid}
+                            currentid={currentid}
+                            note={note}
+                            location={location.pathname}
+                            zeronotes={zeronotes}
+                        />
+
                     )
                     ))
                 }
@@ -142,7 +142,7 @@ const Displaynotes = () => {
             <div className="footer md:hidden fixed bottom-0 bg-yellow-300 w-screen  flex flex-col z-20 items-center">
                 <div className={(hidebutton) ? "hidden" : "flex justify-center"}>
                     <div className="flex items-center justify-center bg-green-500 p-2 text-white text-lg cursor-pointer rounded-full absolute bottom-12">
-        
+
                         <CReateLoadingmobile loading={loading} handlecreatenote={handlecreatenote} />
 
                     </div>

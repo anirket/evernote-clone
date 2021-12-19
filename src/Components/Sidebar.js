@@ -76,7 +76,7 @@ const Sidebar = () => {
                 </div>
             </div>
             {/* for pc */}
-            <div className="pcsidebar hidden md:block h-screen  bg-white border-r-2 border-gray-300">
+            <div className="pcsidebar hidden md:block h-screen  bg-white border-r-2 border-gray-300 relative">
                 <h2 className="flex items-center bg-white  p-4 text-gray-800 justify-between">
                     <img className="w-8 h-8 bg-white rounded-full mx-3" src={user.picture} alt="evernote" />
                     <span className="mr-6">{user.given_name}</span>
@@ -84,8 +84,8 @@ const Sidebar = () => {
                 <hr />
                 <div className="navlinks mt-4 text-white p-1">
 
-               
-                    <CreateLoading handlecreatenote={handlecreatenote} loading={loading}/>
+
+                    <CreateLoading handlecreatenote={handlecreatenote} loading={loading} />
                     <hr />
                     <Link to="/all-notes"> <div onClick={() => changeactiveid(1)} className={"flex items-center p-3 bg-white mb-2 mt-2 text-black " + (activeid === 1 ? "bg-gray-200" : "bg-white")}>
                         <span><CgNotes /></span> <div className="ml-3">all-notes</div>
@@ -99,9 +99,12 @@ const Sidebar = () => {
                     </Link>
                     <hr />
 
-                    <div onClick={() => logout()} className="flex items-center p-3 bg-red-500 text-white mt-10 cursor-pointer rounded-full">
-                        <span><FiLogOut /></span> <div className="ml-3">Logout</div>
+                    <div className="flex justify-center text-center">
+                        <div onClick={() => logout()} className="flex items-center px-24 py-3  bg-gray-600 text-white cursor-pointer  absolute bottom-5 rounded-lg">
+                            <span><FiLogOut /></span> <div className="ml-3">Logout</div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </>
