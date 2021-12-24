@@ -7,7 +7,7 @@ const CreateLoading = ({ handlecreatenote, loading }) => {
         return (
 
             <div className="cursor-pointer flex items-center p-3 bg-gray-300 rounded-full mb-2 text-white font-semibold justify-center mx-6">
-                <div class="animate-spin rounded-full h-7 w-7 border-b-2 border-white"></div>
+                <div className="animate-spin rounded-full h-7 w-7 border-b-2 border-white"></div>
             </div>
         )
     }

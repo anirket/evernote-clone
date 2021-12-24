@@ -2,66 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
+.loginpagewrapper {
+    background-color: "#000000";
+    background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+}
 
-.logindiv{
-    height:75vh;
+.logindiv {
+    height: 75vh;
     width: 84vw;
 }
-.login-wrapper{
+
+.login-wrapper {
     width: 73vw;
 }
+
+
 /* sidebar for pc view */
-.pcsidebar{
+
+.pcsidebar {
     width: 21vw;
 }
+
+
 /* scrollbar */
+
+
 /* width */
+
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
 /* for pc */
-@media only screen and (min-width:640px){
-    .logindiv{
+
+@media only screen and (min-width:640px) {
+    .logindiv {
         height: 82vh;
-    width: 28vw;
+        width: 28vw;
     }
-    .login-wrapper{
+    .login-wrapper {
         width: 21vw;
     }
-    .header{
+    .header {
         width: 25vw;
-
     }
-    .allnotes{
+    .allnotes {
         width: 25vw;
         height: 86vh;
     }
-    .textareainput{
+    .textareainput {
         width: 54vw;
-        height:72vh;
+        height: 72vh;
     }
-    .titleinput{
+    .titleinput {
         width: 54vw;
-
     }
-    .header-top{
+    .header-top {
         width: 54vw;
-
     }
-
 }

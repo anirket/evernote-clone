@@ -5,11 +5,12 @@ import './index.css';
 import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
-    <Auth0Provider domain="aniketkulkarni.us.auth0.com"
-        clientId="9yYWQaFFmOhGbBy9CDJ7fhKLCoIpIfoS"
-        redirectUri="http://localhost:3000/all-notes"
-        >
+    <Auth0Provider domain={process.env.REACT_APP_AUTH_DOMAIN}
+        clientId={process.env.REACT_APP_CLIENT_ID}
+        redirectUri={process.env.REACT_APP_REDIRECT_URI}
+    >
         <App />
     </Auth0Provider>
+
     , document.getElementById("root")
 );
