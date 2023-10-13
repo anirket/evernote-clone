@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^1.4.0",
-    "@craco/craco": "^6.1.2",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
@@ -18,14 +17,14 @@
     "react-moment": "^1.1.1",
     "react-notify-toast": "^0.5.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5.0.1",
     "react-toast-notifications": "^2.4.4",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -47,8 +46,10 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "postcss": "^7.0.35",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
+    "autoprefixer": "10.4.16",
+    "postcss": "8.4.31",
+    "postcss-flexbugs-fixes": "5.0.2",
+    "postcss-preset-env": "9.2.0",
+    "tailwindcss": "3.3.3"
   }
 }
