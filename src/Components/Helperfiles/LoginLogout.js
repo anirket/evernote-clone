@@ -10,12 +10,8 @@ const LoginLogout = () => {
     if (isLoading) {
         return (<div className="login-wrapper cursor-pointer  text-center flex justify-center ">
             <button className="loginbutton rounded-full border-none outline-none md:px-32 bg-red-500  text-white py-2 px-14" disabled>
-
                 <div className="animate-spin rounded-full h-7 w-7 border-b-2 border-white"></div>
-
             </button>
-
-
         </div>)
     }
     return (

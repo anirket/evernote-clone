@@ -19,7 +19,6 @@ const App = () => {
                         <ProtectedRoute path="/note/:id" component={Note} />
                         <ProtectedRoute exact path="/trash" component={Maincomponet} />
                         <ProtectedRoute exact path="/trash/:id" component={Note} />
-
                     </Notescontext>
                 </Switch>
             </Router>
