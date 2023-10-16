@@ -52,6 +52,20 @@
  ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+.wmde-markdown {
+    background-color: white !important;
+    color: black !important;
+}
+.w-md-editor-toolbar  {
+    background-color: gray !important;
+}
+/* .wmde-markdown:last-child {
+    display: none;
+} */
+
+.textareainput {
+    height: calc(100vh - 206px) !important;
+}
 
 
 /* for pc */

@@ -107,7 +107,7 @@ const Displaynotes = () => {
             </div>
             <hr />
 
-            <div className="allnotes  overflow-scroll pb-24 w-screen">
+            <div className="allnotes  overflow-y-scroll pb-24 w-screen">
                 {zeronotes &&
                     <div className="flex flex-col justify-center items-center h-screen">
                         <img className="mb-5" src="/nonotes2.gif" alt="no notes" />

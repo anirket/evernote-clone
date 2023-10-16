@@ -12,6 +12,7 @@ import { VscTrash } from "react-icons/vsc";
 import { useHistory } from 'react-router-dom'
 import { ImUndo2 } from "react-icons/im";
 import FormatTime from './Helperfiles/FormatTime';
+import MDEditor from '@uiw/react-md-editor';
 
 const Note = () => {
     let history = useHistory();
@@ -73,7 +74,7 @@ const Note = () => {
     }
     async function savetodb(fieldtoupdate) {
         if (fieldtoupdate === "titlevalue") {
-             await putRequest(`${BASE_URL}${UPDATE_NOTE}/${currentnoteid}`, { titlevalue: titlevalue, updatedAt: Date.now() });
+            await putRequest(`${BASE_URL}${UPDATE_NOTE}/${currentnoteid}`, { titlevalue: titlevalue, updatedAt: Date.now() });
         }
         else {
             await putRequest(`${BASE_URL}${UPDATE_NOTE}/${currentnoteid}`, { textareavalue: textareavalue, updatedAt: Date.now() });
@@ -91,7 +92,7 @@ const Note = () => {
 
         }
         else {
-          await putRequest(`${BASE_URL}${UPDATE_NOTE}/${currentnoteid}`, { archive: 1, updatedAt: Date.now() });
+            await putRequest(`${BASE_URL}${UPDATE_NOTE}/${currentnoteid}`, { archive: 1, updatedAt: Date.now() });
 
             history.push({
                 pathname: "/all-notes",
@@ -100,7 +101,7 @@ const Note = () => {
         }
     }
     async function movefromtrashtoallnotes() {
-         await putRequest(`${BASE_URL}${UPDATE_NOTE}/${currentnoteid}`, { archive: 0, updatedAt: Date.now() });
+        await putRequest(`${BASE_URL}${UPDATE_NOTE}/${currentnoteid}`, { archive: 0, updatedAt: Date.now() });
         history.push({
             pathname: "/trash",
             notify: "revoked"
@@ -134,7 +135,7 @@ const Note = () => {
                         </div>
                     </div>
                     <div className="border-l-2 border-gray-300 font-extralight text-sm p-2 tracking-wide">
-                        <h2><FormatTime updatedAt={updatedatvalue}/></h2>
+                        <h2><FormatTime updatedAt={updatedatvalue} /></h2>
 
                     </div>
                     <div className="headertitle ">
@@ -147,13 +148,26 @@ const Note = () => {
                         />
                     </div>
                     <div className="maincontent ">
-                        <textarea className="textareainput w-screen md:overflow-hidden  text-lg outline-none border-2 border-gray-300 pl-2 pr-2 h-screen "
-                            onChange={(e) => setextareavalue(e.target.value)}
+                        <MDEditor
+                            onChange={setextareavalue}
+                            className="textareainput w-screen md:overflow-hidden  text-lg outline-none border-2 border-gray-300 pl-2 pr-2"
                             value={textareavalue}
                             onFocus={() => focused("writing")}
                             onBlur={() => focused("stopped", "textareavalue")}
                             placeholder="Start writing..."
                             type="text"
+                            hideToolbar
+                            textareaProps={{
+                                placeholder: "Start Writing here"
+                            }}
+                            preview="live"
+                            visibleDragbar={false}
+                            minHeights={400}
+                            style={{
+                                background: 'white',
+                                color: 'black',
+                            }}
+                            enableScroll
                         />
                     </div>
                 </div>
